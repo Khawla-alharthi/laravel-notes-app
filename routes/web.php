@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// routing to the main page (welcome)
 Route::get('/', function () {
     return view('welcome');
 });
+
+// routing to hello page
+Route::get('/hello.blade.php', function () {
+    return view('hello');
+});
+
