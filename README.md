@@ -215,6 +215,5 @@ The routing system allows users to:
 - Create new notes
 - Edit existing notes
 - Delete notes
-- Search and filter notes (if implemented)
 
 All while ensuring that users can only access and modify their own notes through proper authentication and authorization mechanisms.
