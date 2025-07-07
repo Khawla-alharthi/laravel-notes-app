@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Note</title>
 </head>
 <body>
-    <h1>Hello. Laravel</h1>
+    <h2>Add Note Page</h2>
 </body>
 </html>
