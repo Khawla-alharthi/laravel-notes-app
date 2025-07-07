@@ -12,7 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// routing to the main page (home)
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+// routing to addNote page
+Route::get('/addNote.blade.php', function () {
+    return view('addNote');
+});
+
+// routing to editNote page
+Route::get('/editNote.blade.php', function () {
+    return view('editNote');
+});
+
