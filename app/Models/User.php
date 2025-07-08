@@ -40,5 +40,48 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
+
+    /**
+     * Get the notes for the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function notes(): HasMany
+    {
+        return $this->hasMany(Note::class);
+    }
+
+    /**
+     * Get the user's total note count.
+     *
+     * @return int
+     */
+    public function getTotalNotesAttribute(): int
+    {
+        return $this->notes()->count();
+    }
+
+    /**
+     * Get the user's most recent note.
+     *
+     * @return \App\Models\Note|null
+     */
+    public function getLatestNoteAttribute(): ?Note
+    {
+        return $this->notes()->latest()->first();
+    }
+
+    /**
+     * Scope a query to include users who have notes.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithNotes($query)
+    {
+        return $query->has('notes');
+    }
 }
